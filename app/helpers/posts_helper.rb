@@ -1,5 +1,4 @@
-module ApplicationHelper
-
+module PostsHelper
 
 	def alert_for(flash_type)  
   		{ 

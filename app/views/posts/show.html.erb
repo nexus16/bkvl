@@ -1,0 +1,22 @@
+<div class="post-wrapper">
+			
+			<div class="post">
+				<div class="post-head">
+					<span class="name">linh dh</span>
+				</div>
+
+				<div class="image center-block">
+					<%=  (image_tag @post.image.url(:medium),class:'img-responsive') %>
+				</div>
+
+				<p class="caption"><%= @post.caption %></p>
+
+				<div class="text-center edit-links">
+					<%= link_to "cancel",post_path %> | 
+					<%= link_to "edit",edit_post_path(@post) %>
+				</div>
+
+			</div>
+
+			
+</div>
