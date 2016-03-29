@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@gray-light: #777;
+$gray-medium-light: #eaeaea;
 
 *{
 	margin:0;
@@ -8,9 +10,36 @@
 body{
 	width:80%;
 	margin:auto;
-	background-color: #fafafa;
-  	font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	background-image: url(1920x1200.jpg) ;
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background-attachment:fixed;
 
+}
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
 }
 
 .navbar-brand {
@@ -33,7 +62,7 @@ body{
 }
 
 .posts-wrapper {
-  padding-top: 40px;
+  padding-top: 80px;
   margin: 0 auto;
   max-width: 642px;
   width: 100%;
@@ -87,4 +116,52 @@ body{
 .edit-links {
   margin-top: 20px;
   margin-bottom: 40px;
+}
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #fff;
+  color: #fff;
+  a {
+    color: $gray;
+    &:hover {
+      color: #fff;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+/*icon*/
+.icon{
+  width: 80px;
+  height: 64px;
 }

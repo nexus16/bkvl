@@ -1,15 +1,10 @@
-
-
-
-
-
 <div >
 		
 		<div class="post-wrapper">
 			<%= @posts.each do |post| %>
 			<div class="post">
 				<div class="post-head">
-					<span class="name">linh dh</span>
+					<span class="name"><%=post.user.user_name%></span>
 				</div>
 
 			<div class="image center-block">
