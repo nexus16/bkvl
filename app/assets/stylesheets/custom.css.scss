@@ -8,7 +8,7 @@ $gray-medium-light: #eaeaea;
 	padding:0;
 }
 body{
-	width:80%;
+	
 	margin:auto;
 	height: 100%;
 	background-color: #fafafa;
@@ -46,10 +46,12 @@ p {
 
 .navbar-brand {
   a {
-    color: #125688;
+    color: #ffffff;
   }
 }
-
+.logo{
+  font-size: 30px;
+}
 .navbar-default {
   background-color: #fff;
   height: 54px;
@@ -64,6 +66,23 @@ p {
 }
 
 /* ## POST CUSTOMISATIONS ## */
+
+
+.avata_on_post{
+  #image-preview{
+    margin: 0
+  }
+  .profile-image{
+    margin: 0;
+    height: 30px;
+    width: 30px;
+  }
+  .img-responsive{
+    display: inline;
+  }
+}
+
+
 
 .posts-wrapper {
   padding-top: 40px;
@@ -313,5 +332,23 @@ html {
 
 .profile-bio {
   margin-top: 20px;
+}
+
+.likes {
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
+
+.like {
+  text-decoration: none;
+  color: red;
+}
+.like-button a:hover {
+  text-decoration: none;
+  color: red;
+}
+.like-button a:focus {
+  text-decoration: none;
+  color: red;
 }
 
