@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_post,only:[:show, :edit, :update, :destroy] 
+	before_action :set_post,only:[:show, :edit, :update, :destroy, :like] 
 	before_action :owned_post, only: [:edit, :update, :destroy]
 	
 	def index
-		@posts = Post.all
+		@posts = Post.all.order('created_at DESC')	
 	end
 
 	def new
@@ -48,7 +48,14 @@ class PostsController < ApplicationController
     	redirect_to root_path
   	end
 
-  
+  	def like
+  		if @post.liked_by current_user
+  			respond_to do |format|
+  				format.html{ redirect_to :back }
+  				format.js
+  			end
+  		end
+  	end
 
 	private
 	def post_params
