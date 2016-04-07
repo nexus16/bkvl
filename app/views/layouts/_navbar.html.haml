@@ -19,6 +19,8 @@
               %li
               = link_to "Profile", profile_path(current_user.user_name)
               %li
+              = link_to "ChangePassword", edit_user_registration_path
+              %li
               = link_to "Logout", destroy_user_session_path, method: :delete
         - else
           %li
