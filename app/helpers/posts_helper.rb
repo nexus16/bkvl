@@ -21,6 +21,7 @@ module PostsHelper
     	return 'glyphicon-heart' if current_user.voted_for? post
     	'glyphicon-heart-empty'
   	end
+  	
 
   	private
 
