@@ -2,7 +2,7 @@
   .post
     .post-head
       .thumb-img
-      = link_to profile_avatar_select(current_user),profile_path(current_user.user_name),class: "avata_on_post"
+      = link_to profile_avatar_select(post.user),profile_path(post.user.user_name),class: "avata_on_post"
       .user-name
         = link_to post.user.user_name,profile_path(post.user.user_name)
       .time-ago
