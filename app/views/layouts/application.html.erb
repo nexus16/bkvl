@@ -16,6 +16,32 @@
     </div>
 <%= yield %>
 <%= render 'layouts/footer' %>
+
+<script type="text/javascript">
+(function($){
+  $(function(){ 
+    var scroll = $(document).scrollTop();
+    var headerHeight = $('.page_header').outerHeight();
+     
+    $(window).scroll(function() {
+      var scrolled = $(document).scrollTop();
+      if (scrolled > headerHeight){
+        $('.page_header').addClass('off-canvas');
+      } else {
+        $('.page_header').removeClass('off-canvas');
+      }
+ 
+        if (scrolled > scroll){
+         $('.page_header').removeClass('fixed');
+        } else {
+        $('.page_header').addClass('fixed');
+        }            
+      scroll = $(document).scrollTop(); 
+     });
+        
+   });
+})(jQuery)
+</script>
 </body>
 </html>
 	

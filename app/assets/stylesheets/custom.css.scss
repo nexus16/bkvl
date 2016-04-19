@@ -43,6 +43,24 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+.page_header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-transition: top 0.6s;
+  -moz-transition: top 0.6s;
+  transition: top 0.6s;
+}
+
+.page_header.off-canvas { top: -100px; }
+
+.page_header.fixed {
+  top: 0;
+  z-index: 9999;
+}
+
 
 .navbar-brand {
   a {
@@ -80,7 +98,9 @@ p {
   width: 70%;
   margin: 0 auto;
 }
-
+.dropdown-menu{
+  padding: 10px;
+}
 /* ## POST CUSTOMISATIONS ## */
 
 
@@ -379,3 +399,12 @@ html {
   color: red;
 }
 
+label.password{
+  display: none;
+}
+textarea#user_bio{
+  width: 100%;
+}
+input#post_caption{
+  width: 100%;
+}

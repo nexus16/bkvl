@@ -65,8 +65,8 @@ Rails.application.routes.draw do
   resources :posts do  
     resources :comments
     member do 
-      get 'like'
-      get 'unlike'
+      get 'like', to: 'posts#like'
+      get 'unlike', to: 'posts#unlike'
     end
   as :user do
     get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'    
