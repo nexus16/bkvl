@@ -43,6 +43,8 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
+
 .page_header {
   position: fixed;
   left: 0;
@@ -269,7 +271,7 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #fff;
-  color: #fff;
+  color: #111;
   a {
     color: $gray;
     &:hover {
