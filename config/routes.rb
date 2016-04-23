@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
+  get 'users/new'
+
   get 'profiles/show'
 
   devise_for :users, :controllers => { registrations: 'registrations' }  
+  match '/users',   to: 'users#index',   via: 'get'
+  match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
+
+resources :users, :only =>[:show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -65,12 +73,12 @@ Rails.application.routes.draw do
   resources :posts do  
     resources :comments
     member do 
-      get 'like'
+      get 'like', to: 'posts#like'
+      get 'unlike', to: 'posts#unlike'
     end
-  as :user do
-    get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'    
-    put 'users' => 'devise/registrations#update', :as => 'user_registration'            
-  end
-  end 
-  
+    as :user do
+      get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'    
+      put 'users' => 'devise/registrations#update', :as => 'user_registration'            
+    end
+    end 
 end

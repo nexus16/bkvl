@@ -44,6 +44,26 @@ p {
   line-height: 1.7em;
 }
 
+
+.page_header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-transition: top 0.6s;
+  -moz-transition: top 0.6s;
+  transition: top 0.6s;
+}
+
+.page_header.off-canvas { top: -100px; }
+
+.page_header.fixed {
+  top: 0;
+  z-index: 9999;
+}
+
+
 .navbar-brand {
   a {
     color: #ffffff;
@@ -80,7 +100,9 @@ p {
   width: 70%;
   margin: 0 auto;
 }
-
+.dropdown-menu{
+  padding: 10px;
+}
 /* ## POST CUSTOMISATIONS ## */
 
 
@@ -249,7 +271,7 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #fff;
-  color: #fff;
+  color: #111;
   a {
     color: $gray;
     &:hover {
@@ -359,6 +381,17 @@ html {
   text-decoration: none;
   color: red;
 }
+
+.unlikes {
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
+
+.unlike {
+  text-decoration: none;
+  color: red;
+}
+
 .like-button a:hover {
   text-decoration: none;
   color: red;
@@ -368,3 +401,24 @@ html {
   color: red;
 }
 
+label.password{
+  display: none;
+}
+textarea#user_bio{
+  width: 100%;
+}
+input#post_caption{
+  width: 100%;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
