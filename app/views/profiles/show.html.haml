@@ -1,9 +1,9 @@
 .posts-wrapper
   .row.profile-header
-    .col-md-6
+    .col-md-5
       .img-circle
         = profile_avatar_select(@user)
-    .col-md-6
+    .col-md-5
       .user-name-and-follow
         %h3.profile-user-name
           = @user.user_name
@@ -11,11 +11,14 @@
           - if @user == current_user
             = link_to 'Edit Profile', edit_profile_path(@user.user_name),
                                       class: 'btn edit-button'
+          - else
+            = render 'users/follow_form'       
       %p.profile-bio
         = @user.bio
       .user-statistics
         %p
           = pluralize @user.posts.count, 'post'
+      %section.stats= render 'shared/stats'
 
   
 -@posts.each do |post|
