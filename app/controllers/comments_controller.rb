@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+	before_action :admin_user, only:[:destroy]
 	before_action :set_post
 
 	def create  

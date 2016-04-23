@@ -6,6 +6,14 @@ class UsersController < ApplicationController
   def index
   	        @users = User.paginate(page: params[:page],per_page: 5)
   end
+  def show
+    if @user
+      @posts = @user.posts.order('created_at DESC')
+    else
+      @posts = current_user.posts.order('created_at DESC')
+      @user = current_user
+    end   
+  end
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -15,7 +23,19 @@ class UsersController < ApplicationController
         redirect_to users_path
     end
   end
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
 
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
     
   end
 
