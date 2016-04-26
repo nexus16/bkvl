@@ -7,6 +7,10 @@
         %span.icon-bar
       .navbar-brand.logo= link_to "BKVL", root_path
     .collapse.navbar-collapse#bs-navbar-collapse-1
+      = form_tag root_path, :method => 'get', "role" => "search",  class: "search_bar narbar-form navbar-left" do
+        .form-group
+          = text_field_tag :search, params[:search],:placeholder => "Search...", class: "form-control"
+          
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           - if current_user.admin?

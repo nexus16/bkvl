@@ -447,3 +447,18 @@ input#post_caption{
 .users.follow {
   padding: 0;
 }
+
+
+// ======= search bar======
+.search_bar{
+  margin-left: 215px;
+  .form-group{
+    margin-top: 12px;
+    margin-bottom: 0;
+    .form-control{
+      margin: 0 4px;
+      border-radius: 45px;
+      height: 25px;
+    }
+  }
+}
