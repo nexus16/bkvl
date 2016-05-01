@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-	before_action :admin_user, only:[:destroy]
 	before_action :set_post
 
 	def create  
@@ -21,7 +20,7 @@ class CommentsController < ApplicationController
 	def destroy  
 	  @comment = @post.comments.find(params[:id])
 
-	  if @comment.user_id == current_user.id
+	  if @comment.user_id == current_user.id || current_user.admin?
 	    @comment.delete
 	    respond_to do |format|
 	        format.html { redirect_to root_path }

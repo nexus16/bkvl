@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!
-  	before_action :admin_user, only: [:destroy] 
+	before_action :authenticate_user! 
 	before_action :set_post,only:[:show, :edit, :update, :destroy, :like, :unlike] 
 	before_action :owned_post, only: [:edit, :update, :destroy]
 	 
@@ -82,7 +81,7 @@ class PostsController < ApplicationController
 	end
 
 	def owned_post  
-	  unless current_user == @post.user
+	  unless current_user == @post.user || current_user.admin?
 	    flash[:alert] = "You are not own!"
 	    redirect_to root_path
 	  end
