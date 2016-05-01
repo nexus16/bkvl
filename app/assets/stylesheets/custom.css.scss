@@ -44,7 +44,9 @@ p {
   line-height: 1.7em;
 }
 
-
+input:focus{
+  outline: none;
+}
 .page_header {
   position: fixed;
   left: 0;
@@ -136,6 +138,7 @@ p {
   border-radius: 3px;
   border-width: 1px;
   margin-bottom: 60px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   .post-head {
     flex-direction: row;
     height: 64px;
@@ -451,7 +454,7 @@ input#post_caption{
 
 // ======= search bar======
 .search_bar{
-  margin-left: 215px;
+  margin-left: 250px;
   .form-group{
     margin-top: 12px;
     margin-bottom: 0;
