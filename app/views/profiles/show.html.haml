@@ -20,6 +20,8 @@
           = pluralize @user.posts.count, 'post'
       %section.stats= render 'shared/stats'
 
-  
--@posts.each do |post|
-  = render 'posts/post', post: post
+.posts-wrapper
+  .row.profile-header
+    -@posts.each do |post|
+      .col-md-4
+        = render 'posts/postSub', post: post

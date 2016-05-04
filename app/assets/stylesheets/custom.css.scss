@@ -49,6 +49,7 @@ input:focus{
 }
 .page_header {
   position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
@@ -452,6 +453,12 @@ input#post_caption{
 }
 
 
+.padding-top{
+  width: 100%;
+  height: 52px;
+}
+
+
 // ======= search bar======
 .search_bar{
   margin-left: 250px;
@@ -465,3 +472,101 @@ input#post_caption{
     }
   }
 }
+
+
+.img_sub>img{
+  width: 100%;
+  height: 200px;
+  margin-bottom: 30px;
+}
+.img_sub{
+  position: relative;
+}
+.img_sub_hover{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  z-index: 10000000;
+  display: none;
+  a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    .noti-like-comt{
+      color: white;
+      font-size: 200%;
+    }
+    .noti-like-comt:nth-child(1){
+      margin-left:50px;
+      margin-top: 75px;
+    }
+    .noti-like-comt:nth-child(3){
+      margin-right: 5px;
+    }
+    .noti-like-comt:nth-child(2),
+    .noti-like-comt:nth-child(4){
+      margin-bottom: 2px;
+    }
+  }
+}
+.img_sub:hover .img_sub_hover{
+  display: block;
+}
+
+.modal {
+  .modal-dialog{
+      .modal-content{
+        .row{
+          .col-md-4{
+            height: 500px;
+            position: relative;
+              .thumb-img{
+                float: left;
+                margin-top: 10px;
+                margin-right: 20px;
+                margin-bottom: 10px;
+              }
+              .user-name-owner{
+                margin-top: 12px;
+                a{
+                  display: inline;
+                  font-size: 120%;
+                }
+              }
+              .likes>a{
+              display: inline;
+              }
+              .comment-like-form{
+                
+                position: absolute;
+                z-index: 1;
+                bottom: 0;
+                left: 0;
+              }
+              .caption{
+                .comment{
+                  height: 30px;
+                }
+                .delete-comment{
+                    display: none;
+                  }
+                .user-name{
+                  float: left;
+                  margin-right: 10px;
+                }
+                a{
+                  display: inline;
+                }
+              }
+
+
+          }
+        }
+      }
+  } 
+}
+

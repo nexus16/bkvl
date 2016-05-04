@@ -1,0 +1,33 @@
+.image.img-responsive.center-block.img_sub
+	= image_tag post.image.url(:medium), class:'img-responsive'
+	.img_sub_hover
+		%a{"data-toggle"=>"modal", "data-target"=>"#myModal_#{post.id}"}
+			%span.noti-like-comt{:class=>"glyphicon glyphicon-comment"} 
+			%span.noti-like-comt=post.comments.count
+			%span.noti-like-comt{:class=>"glyphicon glyphicon-heart"}
+			%span.noti-like-comt=post.votes_for.size 
+		%div{:class=>"modal fade",id:"myModal_#{post.id}","tabindex"=>"-1","role"=>"dialog", "aria-labelledby"=>"myModalLabel", "aria-hidden"=>"true"}
+			.modal-dialog{:style=>"width:800px;"}
+				.modal-content
+					.row
+						.col-md-8
+							= link_to (image_tag post.image.url(:medium), style:'width:100%;height:500px'), post_path(post)
+						.col-md-4		
+							.thumb-img
+								= link_to profile_avatar_select(post.user),profile_path(post.user.user_name),class: "avata_on_post"
+							.user-name.user-name-owner
+								= link_to post.user.user_name,profile_path(post.user.user_name)
+							.likes
+								= render 'posts/likes',post: post
+							.caption
+								.caption-content
+									= post.caption
+								.comments{id: "comments_#{post.id}"}
+									- if post.comments
+										= render post.comments, post: post
+							.comment-like-form
+								.comment-form
+									= form_for([post, post.comments.build], remote: true) do |f|
+										= f.text_field :content, placeholder: 'Add a comment...', class: "comment_content", id: "comment_content_#{post.id}"
+      
+
