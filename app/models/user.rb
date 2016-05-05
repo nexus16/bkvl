@@ -22,7 +22,7 @@ acts_as_voter
 
   has_attached_file :avatar, styles: { medium: '152x152#' }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
-  
+  validates :user_name, uniqueness: true
   def feed
         Post.where("user_id IN (:following_ids) OR user_id = :user_id",
                     following_ids: following_ids, user_id: id)
