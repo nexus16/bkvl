@@ -10,7 +10,8 @@
     .image.center-block
       = link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post)
     .post-bottom
-      = render 'posts/likes',post: post
+      .post_ajax{id: "post-bottom_#{post.id}"}
+        = render 'posts/likes', post: post
       .caption
         .caption-content
           .user-name
@@ -20,11 +21,8 @@
           - if post.comments
             = render post.comments, post: post
     .comment-like-form.row
-      .like-button.col-sm-1
-        - if current_user.voted_for? post
-          = link_to '', unlike_post_path(post.id), id: "unlike_#{post.id}", class: "unlike glyphicon #{liked_post post}"
-        - else
-          =link_to '', like_post_path(post.id), id: "like_#{post.id}", class: "like glyphicon #{liked_post post}"
+      .like-button.col-sm-1{id: "like_form_#{post.id}"}
+        = render "posts/like_form", post: post
 
       .comment-form.col-sm-11
         = form_for([post, post.comments.build], remote: true) do |f|
