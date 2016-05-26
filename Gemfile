@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'puma'
+
+gem 'figaro'
+
 #edit bundle
 gem 'simple_form', '~> 3.1.0'  
 gem 'paperclip', '~> 4.2'
@@ -54,6 +58,11 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+
+  gem 'capistrano-rvm'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
