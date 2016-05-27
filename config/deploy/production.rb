@@ -30,7 +30,7 @@
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
-server '133.242.235.167', user: 'ubuntu', roles: %w{web app db}
+server '_', user: 'ubuntu', roles: %w{web app db}
 
 
 # Custom SSH Options
