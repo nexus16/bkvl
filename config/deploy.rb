@@ -60,7 +60,11 @@ set :pty, true
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-
+set :ssh_options, {
+    forward_agent: true,
+    user: "ubuntu",
+	auth_methods: %w(0JlhLxdd)
+}
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
