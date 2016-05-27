@@ -63,7 +63,7 @@ set :pty, true
 set :ssh_options, {
     forward_agent: true,
     user: "ubuntu",
-	auth_methods: %w(0JlhLxdd)
+	auth_methods: %w(password)
 }
 
 namespace :puma do
